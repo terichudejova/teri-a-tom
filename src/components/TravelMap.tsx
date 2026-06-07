@@ -719,14 +719,6 @@ export default function TravelMap() {
   return (
     <section id="travel" className="py-24 md:py-32 bg-white relative overflow-hidden">
 
-      <img
-        src={`${import.meta.env.BASE_URL}assets/butterfly4.png`}
-        alt=""
-        aria-hidden="true"
-        className="absolute top-12 left-[5%] pointer-events-none z-10 animate-float-slow w-14 md:w-20 select-none"
-        style={{ animationDelay: '1.3s' }}
-      />
-
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-12 md:mb-16">
