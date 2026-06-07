@@ -35,7 +35,7 @@ export default function OurStory() {
       {/* ── Mountain photo – bottom of section ── */}
       <div className="relative w-full pointer-events-none select-none" style={{ height: '380px', marginTop: '-60px' }}>
         <img
-          src="/assets/mountains.jpg"
+          src={`${import.meta.env.BASE_URL}assets/mountains.jpg`}
           alt=""
           aria-hidden="true"
           className="absolute bottom-0 left-0 w-full h-full object-cover select-none"

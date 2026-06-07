@@ -14,15 +14,15 @@ export default function DressCode() {
   const { t } = useLanguage()
 
   const womenPhotos = [
-    { src: '/assets/women1.jpg', alt: 'Women outfit inspiration 1' },
-    { src: '/assets/women2.jpg', alt: 'Women outfit inspiration 2' },
-    { src: '/assets/women3.jpg', alt: 'Women outfit inspiration 3' },
+    { src: `${import.meta.env.BASE_URL}assets/women1.jpg`, alt: 'Women outfit inspiration 1' },
+    { src: `${import.meta.env.BASE_URL}assets/women2.jpg`, alt: 'Women outfit inspiration 2' },
+    { src: `${import.meta.env.BASE_URL}assets/women3.jpg`, alt: 'Women outfit inspiration 3' },
   ]
 
   const menPhotos = [
-    { src: '/assets/men1.jpg', alt: 'Men outfit inspiration 1' },
-    { src: '/assets/men2.jpg', alt: 'Men outfit inspiration 2' },
-    { src: '/assets/men3.jpg', alt: 'Men outfit inspiration 3' },
+    { src: `${import.meta.env.BASE_URL}assets/men1.jpg`, alt: 'Men outfit inspiration 1' },
+    { src: `${import.meta.env.BASE_URL}assets/men2.jpg`, alt: 'Men outfit inspiration 2' },
+    { src: `${import.meta.env.BASE_URL}assets/men3.jpg`, alt: 'Men outfit inspiration 3' },
   ]
 
   return (
@@ -33,7 +33,7 @@ export default function DressCode() {
 
       {/* Watercolor dragonfly + butterfly */}
       <img
-        src="/assets/butterfly4.png"
+        src={`${import.meta.env.BASE_URL}assets/butterfly4.png`}
         alt=""
         aria-hidden="true"
         className="absolute bottom-20 right-[5%] pointer-events-none z-10 animate-float-slow w-14 md:w-20 select-none"

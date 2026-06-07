@@ -8,9 +8,9 @@ export default function Hero() {
   const { days, hours, minutes } = useCountdown()
 
   const photos = [
-    { src: '/assets/landing-page-1.jpg', alt: 'Teri & Tom — foto 1' },
-    { src: '/assets/landing-page-2.JPG', alt: 'Teri & Tom — foto 2' },
-    { src: '/assets/landing-page-3.JPG', alt: 'Teri & Tom — foto 3' },
+    { src: `${import.meta.env.BASE_URL}assets/landing-page-1.jpg`, alt: 'Teri & Tom - foto 1' },
+    { src: `${import.meta.env.BASE_URL}assets/landing-page-2.JPG`, alt: 'Teri & Tom - foto 2' },
+    { src: `${import.meta.env.BASE_URL}assets/landing-page-3.JPG`, alt: 'Teri & Tom - foto 3' },
   ]
 
   return (

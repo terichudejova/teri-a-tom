@@ -65,11 +65,11 @@ const LOCATIONS: Location[] = [
   { id: 'galapagos', dates: ['01/2026'], emoji: '🩷' },
   { id: 'quito', dates: ['01/2026'] },
   { id: 'barcelona', dates: ['05/2026'] },
-  { id: 'alicante',  dates: ['05/2026'] },
-  { id: 'madrid',    dates: ['05/2026'] },
-  { id: 'murcia',    dates: ['05/2026'] },
-  { id: 'helsinki',  dates: ['05/2026'] },
-  { id: 'tallinn',   dates: ['05/2026'] },
+  { id: 'alicante', dates: ['05/2026'] },
+  { id: 'madrid', dates: ['05/2026'] },
+  { id: 'murcia', dates: ['05/2026'] },
+  { id: 'helsinki', dates: ['05/2026'] },
+  { id: 'tallinn', dates: ['05/2026'] },
 ]
 
 // Real WGS84 coordinates for each location
@@ -117,11 +117,11 @@ const COORDS: Record<string, [number, number]> = {
   galapagos: [-89.61, -0.90],
   quito: [-78.52, -0.23],
   barcelona: [2.17, 41.38],
-  alicante:  [-0.48, 38.35],
-  madrid:    [-3.70, 40.42],
-  murcia:    [-1.13, 37.98],
-  helsinki:  [24.94, 60.17],
-  tallinn:   [24.75, 59.44],
+  alicante: [-0.48, 38.35],
+  madrid: [-3.70, 40.42],
+  murcia: [-1.13, 37.98],
+  helsinki: [24.94, 60.17],
+  tallinn: [24.75, 59.44],
 }
 
 // ── Photo placeholders ────────────────────────────────────────────────────────
@@ -147,7 +147,7 @@ const PHOTO_COUNTS: Record<string, number> = {
 function getPhotos(locationId: string): string[] {
   const count = PHOTO_COUNTS[locationId] ?? 0
   return Array.from({ length: count }, (_, i) =>
-    `/assets/travel/${locationId}/photo-${i + 1}.jpeg`
+    `${import.meta.env.BASE_URL}assets/travel/${locationId}/photo-${i + 1}.jpeg`
   )
 }
 
@@ -720,7 +720,7 @@ export default function TravelMap() {
     <section id="travel" className="py-24 md:py-32 bg-white relative overflow-hidden">
 
       <img
-        src="/assets/butterfly4.png"
+        src={`${import.meta.env.BASE_URL}assets/butterfly4.png`}
         alt=""
         aria-hidden="true"
         className="absolute top-12 left-[5%] pointer-events-none z-10 animate-float-slow w-14 md:w-20 select-none"
