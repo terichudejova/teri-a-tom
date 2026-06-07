@@ -1,5 +1,5 @@
 import { useLanguage } from '../context/LanguageContext'
-import { MountainBackground, FlowerRow } from './Decorations'
+import { FlowerRow } from './Decorations'
 
 function SectionLabel({ label }: { label: string }) {
   return (

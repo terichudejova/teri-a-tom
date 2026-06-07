@@ -1,5 +1,4 @@
 import { useLanguage } from '../context/LanguageContext'
-import { MountainDivider } from './Decorations'
 
 function SectionLabel({ label }: { label: string }) {
   return (
