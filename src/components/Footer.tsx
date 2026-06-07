@@ -2,6 +2,7 @@ import { useLanguage } from '../context/LanguageContext'
 
 export default function Footer() {
   const { t } = useLanguage()
+  //comment
 
   return (
     <footer className="bg-charcoal text-white/60 py-10 md:py-14">
