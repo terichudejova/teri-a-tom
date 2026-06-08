@@ -136,12 +136,12 @@ const PHOTO_COUNTS: Record<string, number> = {
   bled: 18, mallorca: 12, newyork: 18, dresden: 12,
   krakow: 15, paris: 21, stgallenkirch: 24, lech: 18,
   zurich: 6, luzern: 9, bali: 18, perth: 21,
-  rottnest: 21, cairns: 48, sydney: 0, airlie: 30,
+  rottnest: 21, cairns: 48, sydney: 33, airlie: 30,
   goldcoast: 24, byronbay: 33, chicago: 24, krkonose: 12,
   dubai: 48, doha: 18, finkenberg: 36, singapore: 30,
   galapagos: 52, quito: 12,
   barcelona: 30, alicante: 27, madrid: 24, murcia: 15,
-  helsinki: 27, tallinn: 0,
+  helsinki: 27, tallinn: 21,
 }
 
 function getPhotos(locationId: string): string[] {
