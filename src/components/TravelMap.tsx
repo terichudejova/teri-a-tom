@@ -51,7 +51,7 @@ const LOCATIONS: Location[] = [
   { id: 'bali', dates: ['09/2023'] },
   { id: 'perth', dates: ['09/2023'] },
   { id: 'rottnest', dates: ['09/2023'] },
-  { id: 'cairns', dates: ['10/2025'] },
+  { id: 'cairns', dates: ['10/2025'], emoji: '🩷' },
   { id: 'sydney', dates: ['11/2025'] },
   { id: 'airlie', dates: ['11/2025'], emoji: '🩷' },
   { id: 'goldcoast', dates: ['11/2025'] },
@@ -130,18 +130,18 @@ const COORDS: Record<string, [number, number]> = {
 
 const PHOTO_COUNTS: Record<string, number> = {
   prague: 0, stockholm: 9, vienna: 0, tatry: 0,
-  bratislava: 6, kosice: 0, germany: 18, rome: 21,
-  vatican: 0, turkey: 15, corfu: 0, vail: 21,
-  denver: 15, playadelcarmen: 12, cozumel: 0, budapest: 24,
+  bratislava: 6, kosice: 6, germany: 18, rome: 21,
+  vatican: 0, turkey: 15, corfu: 36, vail: 21,
+  denver: 15, playadelcarmen: 21, cozumel: 12, budapest: 24,
   bled: 18, mallorca: 12, newyork: 18, dresden: 12,
   krakow: 15, paris: 21, stgallenkirch: 24, lech: 18,
-  zurich: 6, luzern: 9, bali: 18, perth: 0,
-  rottnest: 0, cairns: 0, sydney: 0, airlie: 30,
-  goldcoast: 0, byronbay: 33, chicago: 24, krkonose: 0,
-  dubai: 0, doha: 0, finkenberg: 0, singapore: 0,
+  zurich: 6, luzern: 9, bali: 18, perth: 21,
+  rottnest: 21, cairns: 48, sydney: 0, airlie: 30,
+  goldcoast: 24, byronbay: 33, chicago: 24, krkonose: 12,
+  dubai: 48, doha: 18, finkenberg: 36, singapore: 30,
   galapagos: 52, quito: 12,
   barcelona: 30, alicante: 27, madrid: 24, murcia: 15,
-  helsinki: 0, tallinn: 0,
+  helsinki: 27, tallinn: 0,
 }
 
 function getPhotos(locationId: string): string[] {
