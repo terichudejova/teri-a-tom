@@ -30,7 +30,7 @@ export default function OurStory() {
         </div>
       </div>
 
-      <FlowerRow className="relative z-10 opacity-70" />
+      <FlowerRow className="relative z-10 opacity-70 scale-[1.1] md:scale-100" />
 
       {/* ── Mountain photo – bottom of section ── */}
       <div className="relative w-full pointer-events-none select-none" style={{ height: '380px', marginTop: '-60px' }}>

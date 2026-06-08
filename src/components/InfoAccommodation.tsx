@@ -108,7 +108,7 @@ export default function InfoAccommodation() {
           ))}
         </div>
 
-        <FlowerRow className="mt-2 -mb-20 md:mt-8 md:-mb-20 opacity-55 scale-125 md:scale-100" />
+        <FlowerRow className="mt-2 -mb-20 md:mt-8 md:-mb-20 opacity-55 scale-[1.1] md:scale-100" />
 
       </div>
     </section>

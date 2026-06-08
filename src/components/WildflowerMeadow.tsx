@@ -1,6 +1,6 @@
 export default function WildflowerMeadow({ className = '' }: { className?: string }) {
   return (
-    <div className={`absolute bottom-0 left-0 w-full pointer-events-none select-none z-0 ${className}`} style={{ height: '140px' }}>
+    <div className={`absolute bottom-0 left-0 w-full pointer-events-none select-none z-0 ${className}`}>
       <svg viewBox="0 0 1440 140" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" preserveAspectRatio="xMidYMax meet">
 
         {/* ── Grass blades ── */}

@@ -5,6 +5,7 @@ export default function Header() {
   const { language, setLanguage, t } = useLanguage()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [langOpen, setLangOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40)
@@ -61,10 +62,9 @@ export default function Header() {
 
           {/* Language switch + hamburger */}
           <div className="flex items-center gap-3">
-            {/* Language Toggle */}
+            {/* Desktop: pill switcher */}
             <div
-              id="lang-switcher"
-              className="flex items-center rounded-full p-0.5"
+              className="hidden md:flex items-center rounded-full p-0.5"
               style={{
                 background: 'rgba(196, 180, 154, 0.2)',
                 backdropFilter: 'blur(12px)',
@@ -72,28 +72,38 @@ export default function Header() {
                 border: '1px solid rgba(196, 180, 154, 0.4)',
               }}
             >
+              <button onClick={() => setLanguage('cs')} className={`px-3 py-1.5 text-xs font-medium uppercase tracking-wider rounded-full transition-all duration-300 ${language === 'cs' ? 'bg-gold text-white shadow-sm' : 'text-charcoal hover:text-gold'}`}>CZ</button>
+              <button onClick={() => setLanguage('en')} className={`px-3 py-1.5 text-xs font-medium uppercase tracking-wider rounded-full transition-all duration-300 ${language === 'en' ? 'bg-gold text-white shadow-sm' : 'text-charcoal hover:text-gold'}`}>EN</button>
+            </div>
+
+            {/* Mobile: globe icon with dropdown */}
+            <div className="md:hidden relative">
               <button
-                id="lang-cs"
-                onClick={() => setLanguage('cs')}
-                className={`px-3 py-1.5 text-xs font-medium uppercase tracking-wider rounded-full transition-all duration-300 ${
-                  language === 'cs'
-                    ? 'bg-gold text-white shadow-sm'
-                    : 'text-charcoal hover:text-gold'
-                }`}
+                onClick={() => setLangOpen(o => !o)}
+                className="w-8 h-8 flex items-center justify-center text-gold"
+                aria-label="Switch language"
               >
-                CZ
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M12 3c-2.5 3-4 5.5-4 9s1.5 6 4 9M12 3c2.5 3 4 5.5 4 9s-1.5 6-4 9"/>
+                  <path d="M3.6 9h16.8M3.6 15h16.8"/>
+                </svg>
               </button>
-              <button
-                id="lang-en"
-                onClick={() => setLanguage('en')}
-                className={`px-3 py-1.5 text-xs font-medium uppercase tracking-wider rounded-full transition-all duration-300 ${
-                  language === 'en'
-                    ? 'bg-gold text-white shadow-sm'
-                    : 'text-charcoal hover:text-gold'
-                }`}
-              >
-                EN
-              </button>
+              {langOpen && (
+                <div className="absolute right-0 top-10 rounded-2xl overflow-hidden shadow-lg z-50 flex flex-col min-w-[140px]"
+                  style={{ background: 'rgba(250,248,245,0.97)', border: '1px solid rgba(196,180,154,0.35)', backdropFilter: 'blur(12px)' }}
+                >
+                  {(['cs', 'en'] as const).map(lang => (
+                    <button
+                      key={lang}
+                      onClick={() => { setLanguage(lang); setLangOpen(false) }}
+                      className={`px-6 py-3 text-sm uppercase tracking-widest transition-colors text-left ${language === lang ? 'text-gold font-semibold' : 'text-charcoal/60 hover:text-gold font-medium'}`}
+                    >
+                      {lang === 'cs' ? 'Čeština' : 'English'}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Mobile Hamburger */}

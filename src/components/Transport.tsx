@@ -54,7 +54,7 @@ export default function Transport() {
         </div>
 
         {/* General thank-you note */}
-        <FlowerRow className="opacity-60 mb-12" />
+        <FlowerRow className="opacity-60 mb-4 md:mb-12 scale-[1.1] md:scale-100" />
         <div className="text-center max-w-xl mx-auto mt-4 md:mt-8">
           <p className="font-serif italic text-xl md:text-2xl text-gold/80 leading-relaxed">
             {t.transport.thankYouText.split('\n').map((line, i, arr) => (

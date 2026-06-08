@@ -46,7 +46,7 @@ export default function Contact() {
     <section id="contact" className="py-24 md:py-32 bg-white relative overflow-hidden">
 
       {/* ── Wildflower meadow growing from bottom edge ── */}
-      <WildflowerMeadow className="h-[220px] md:h-[140px]" />
+      <WildflowerMeadow className="h-[280px] md:h-[140px]" />
 
       <div className="relative z-10 max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 md:mb-12">

@@ -733,6 +733,9 @@ export default function TravelMap() {
           <p className="mt-4 text-charcoal/35 text-sm font-light italic">
             {t.travel.clickHint}
           </p>
+          <p className="md:hidden mt-3 text-charcoal/70 text-sm font-medium leading-relaxed">
+            {t.travel.desktopHint}
+          </p>
         </div>
 
         <WorldMap
@@ -776,7 +779,7 @@ export default function TravelMap() {
 
         </div>
       </div>
-      <FlowerRow className="opacity-60 mt-2 -mb-20 md:mt-8 md:-mb-20 scale-125 md:scale-100" />
+      <FlowerRow className="opacity-60 mt-2 -mb-20 md:mt-8 md:-mb-20 scale-[1.1] md:scale-100" />
       {activeLocation && (
         <LocationModal
           location={activeLocation}
