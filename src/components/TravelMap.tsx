@@ -136,11 +136,11 @@ const PHOTO_COUNTS: Record<string, number> = {
   bled: 18, mallorca: 12, newyork: 18, dresden: 12,
   krakow: 15, paris: 21, stgallenkirch: 24, lech: 18,
   zurich: 6, luzern: 9, bali: 18, perth: 0,
-  rottnest: 0, cairns: 0, sydney: 0, airlie: 18,
-  goldcoast: 0, byronbay: 0, chicago: 24, krkonose: 0,
+  rottnest: 0, cairns: 0, sydney: 0, airlie: 30,
+  goldcoast: 0, byronbay: 33, chicago: 24, krkonose: 0,
   dubai: 0, doha: 0, finkenberg: 0, singapore: 0,
   galapagos: 52, quito: 12,
-  barcelona: 0, alicante: 0, madrid: 0, murcia: 0,
+  barcelona: 30, alicante: 27, madrid: 24, murcia: 15,
   helsinki: 0, tallinn: 0,
 }
 
