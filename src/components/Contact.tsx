@@ -64,8 +64,6 @@ export default function Contact() {
             id="contact-thankyou"
             className="bg-gradient-to-br from-sage/10 to-sky/10 rounded-3xl p-10 text-center border border-sage/20 shadow-sm"
           >
-            <div className="text-5xl mb-4">🌸</div>
-            <h3 className="font-serif text-3xl text-forest mb-3">{t.contact.thankYouTitle}</h3>
             <p className="text-charcoal/70 text-lg font-light">{t.contact.thankYouMessage}</p>
           </div>
         ) : (
