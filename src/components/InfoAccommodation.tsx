@@ -15,9 +15,9 @@ export default function InfoAccommodation() {
   const { t } = useLanguage()
 
   const photos = [
-    { src: `${import.meta.env.BASE_URL}assets/place1.png`, alt: 'Podlešanský mlýn - foto 1' },
-    { src: `${import.meta.env.BASE_URL}assets/place2.png`, alt: 'Podlešanský mlýn - foto 2' },
-    { src: `${import.meta.env.BASE_URL}assets/place3.png`, alt: 'Podlešanský mlýn - foto 3' },
+    { src: `${import.meta.env.BASE_URL}assets/place1.jpg`, alt: 'Podlešanský mlýn - foto 1' },
+    { src: `${import.meta.env.BASE_URL}assets/place2.jpg`, alt: 'Podlešanský mlýn - foto 2' },
+    { src: `${import.meta.env.BASE_URL}assets/place3.jpg`, alt: 'Podlešanský mlýn - foto 3' },
   ]
 
   return (
