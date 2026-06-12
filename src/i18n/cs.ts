@@ -103,7 +103,7 @@ export const cs = {
     zoomOut: 'Zpět na celou mapu',
     present: 'současnost',
     locations: {
-      prague: { name: 'Praha', country: 'Česká republika' },
+      prague: { name: 'Praha a okolí', country: 'Česká republika' },
       stockholm: { name: 'Stockholm', country: 'Švédsko' },
       vienna: { name: 'Vídeň', country: 'Rakousko' },
       tatry: { name: 'Poprad & Tatry', country: 'Slovensko' },

@@ -105,7 +105,7 @@ export const en: Translations = {
     zoomOut: 'Back to full map',
     present: 'present',
     locations: {
-      prague: { name: 'Prague', country: 'Czech Republic' },
+      prague: { name: 'Prague and surroundings', country: 'Czech Republic' },
       stockholm: { name: 'Stockholm', country: 'Sweden' },
       vienna: { name: 'Vienna', country: 'Austria' },
       tatry: { name: 'Poprad & Tatra Mountains', country: 'Slovakia' },
