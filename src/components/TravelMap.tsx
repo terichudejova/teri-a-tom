@@ -24,7 +24,7 @@ interface Location {
 const LOCATIONS: Location[] = [
   { id: 'prague', dates: ['12/2019 – __present__'], note: 'home' },
   { id: 'stockholm', dates: ['01/2020'] },
-  { id: 'vienna', dates: ['02/2020'] },
+  { id: 'vienna', dates: ['02/2020', '07/2021', '09/2023'] },
   { id: 'tatry', dates: ['03/2020 – __present__'], note: 'secondHome' },
   { id: 'bratislava', dates: ['06/2020'] },
   { id: 'kosice', dates: ['06/2020', '08/2025'] },
