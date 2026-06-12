@@ -129,7 +129,7 @@ const COORDS: Record<string, [number, number]> = {
 // ── Photo counts per location — update when you add photos ───────────────────
 
 const PHOTO_COUNTS: Record<string, number> = {
-  prague: 115, stockholm: 9, vienna: 9, tatry: 36,
+  prague: 114, stockholm: 9, vienna: 9, tatry: 36,
   bratislava: 6, kosice: 6, germany: 18, rome: 21,
   vatican: 3, turkey: 15, corfu: 36, vail: 21,
   denver: 15, playadelcarmen: 21, cozumel: 12, budapest: 24,
@@ -139,7 +139,7 @@ const PHOTO_COUNTS: Record<string, number> = {
   rottnest: 21, cairns: 48, sydney: 33, airlie: 30,
   goldcoast: 24, byronbay: 33, chicago: 24, krkonose: 12,
   dubai: 48, doha: 18, finkenberg: 36, singapore: 30,
-  galapagos: 52, quito: 12,
+  galapagos: 60, quito: 12,
   barcelona: 30, alicante: 27, madrid: 24, murcia: 15,
   helsinki: 27, tallinn: 21,
 }
