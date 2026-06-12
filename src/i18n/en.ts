@@ -76,7 +76,7 @@ export const en: Translations = {
       {
         icon: '🚌',
         title: 'Direct Bus',
-        description: 'Direct bus no. 332 from Prague straight to Lešany (approx. 1 hour).',
+        description: 'Direct bus no. 332 from Prague (Krč) straight to Lešany (approx. 1 hour). Warning: doesn\'t run often!',
       },
       {
         icon: '🚗',

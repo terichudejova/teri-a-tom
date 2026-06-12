@@ -74,7 +74,7 @@ export const cs = {
       {
         icon: '🚌',
         title: 'Přímý autobus',
-        description: 'Přímý autobus č. 332 z Prahy přímo do Lešan (cca 1 hodina).',
+        description: 'Přímý autobus č. 332 z Prahy (Krč) přímo do Lešan (cca 1 hodina). Pozor, nejezdí často!',
       },
       {
         icon: '🚗',
