@@ -198,11 +198,30 @@ interface ModalProps {
 function LocationModal({ location, onClose }: ModalProps) {
   const { t } = useLanguage()
   const locData = t.travel.locations[location.id as keyof typeof t.travel.locations]
+
   const [carouselStart, setCarouselStart] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+
+  // Sledování velikosti obrazovky pro responzivní počet fotek
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    handleResize() // Prvotní nastavení
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   const photos = getPhotos(location.id)
-  const visible = photos.slice(carouselStart, carouselStart + 3)
+  const itemsPerPage = isMobile ? 1 : 3
+  const visible = photos.slice(carouselStart, carouselStart + itemsPerPage)
+
   const canPrev = carouselStart > 0
-  const canNext = carouselStart + 3 < photos.length
+  const canNext = carouselStart + itemsPerPage < photos.length
+
+  const handlePrev = () => setCarouselStart(s => Math.max(0, s - itemsPerPage))
+  const handleNext = () => {
+    const maxStart = Math.max(0, photos.length - itemsPerPage)
+    setCarouselStart(s => Math.min(maxStart, s + itemsPerPage))
+  }
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
@@ -213,12 +232,12 @@ function LocationModal({ location, onClose }: ModalProps) {
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-white/80 hover:bg-white text-charcoal/50 hover:text-charcoal transition-all text-sm"
+          className="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-white/80 hover:bg-white text-charcoal/50 hover:text-charcoal transition-all text-sm shadow-sm md:shadow-none"
           aria-label={t.travel.close}
         >✕</button>
 
-        <div className="p-7 md:p-8">
-          {/* Compact header */}
+        <div className="p-6 md:p-8">
+          {/* Kompaktní hlavička */}
           <div className="flex items-start gap-3 mb-4 pr-8">
             <div className="flex-1 min-w-0">
               <div className="flex items-baseline gap-2 flex-wrap">
@@ -247,27 +266,39 @@ function LocationModal({ location, onClose }: ModalProps) {
 
           {photos.length > 0 && (
             <>
-              <div className="w-full h-px bg-sage/15 mb-4" />
-              <div className="grid grid-cols-3 gap-3">
+              <div className="w-full h-px bg-sage/15 mb-4 md:mb-5" />
+
+              {/* Dynamický grid: 1 sloupec na mobilu, 3 na desktopu */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-3">
                 {visible.map((src, i) => (
-                  <div key={`${src}-${carouselStart + i}`} className="aspect-[3/4] rounded-xl overflow-hidden">
+                  <div
+                    key={`${src}-${carouselStart + i}`}
+                    className="aspect-[3/4] w-full max-w-[min(100%,50vh)] mx-auto md:max-w-none rounded-xl overflow-hidden md:shadow-none"
+                  >
                     <FadeImage src={src} alt={`${locData.name} ${carouselStart + i + 1}`} />
                   </div>
                 ))}
               </div>
-              <div className="flex items-center justify-between mt-3">
+
+              {/* Navigační prvky pod fotkami */}
+              <div className="flex items-center justify-between mt-5 md:mt-4">
                 <button
-                  onClick={() => setCarouselStart(s => Math.max(0, s - 3))}
+                  onClick={handlePrev}
                   disabled={!canPrev}
-                  className="w-8 h-8 rounded-full border border-sage/20 flex items-center justify-center text-charcoal/45 hover:text-charcoal hover:border-sage/40 transition-all disabled:opacity-20 disabled:cursor-not-allowed text-sm"
+                  className="w-10 h-10 md:w-8 md:h-8 rounded-full border border-sage/30 flex items-center justify-center text-charcoal/60 hover:text-charcoal hover:border-sage/60 transition-all disabled:opacity-20 disabled:cursor-not-allowed text-sm bg-white"
                 >←</button>
-                <span className="text-xs text-charcoal/30 font-light">
-                  {carouselStart + 1}–{Math.min(carouselStart + 3, photos.length)} / {photos.length}
+
+                <span className="text-xs text-charcoal/50 font-medium tracking-wide">
+                  {isMobile
+                    ? `${carouselStart + 1} / ${photos.length}`
+                    : `${carouselStart + 1}–${Math.min(carouselStart + itemsPerPage, photos.length)} / ${photos.length}`
+                  }
                 </span>
+
                 <button
-                  onClick={() => setCarouselStart(s => Math.min(photos.length - 3, s + 3))}
+                  onClick={handleNext}
                   disabled={!canNext}
-                  className="w-8 h-8 rounded-full border border-sage/20 flex items-center justify-center text-charcoal/45 hover:text-charcoal hover:border-sage/40 transition-all disabled:opacity-20 disabled:cursor-not-allowed text-sm"
+                  className="w-10 h-10 md:w-8 md:h-8 rounded-full border border-sage/30 flex items-center justify-center text-charcoal/60 hover:text-charcoal hover:border-sage/60 transition-all disabled:opacity-20 disabled:cursor-not-allowed text-sm bg-white"
                 >→</button>
               </div>
             </>

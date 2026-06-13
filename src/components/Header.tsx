@@ -31,9 +31,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-cream/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-cream/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -84,9 +83,9 @@ export default function Header() {
                 aria-label="Switch language"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-                  <circle cx="12" cy="12" r="9"/>
-                  <path d="M12 3c-2.5 3-4 5.5-4 9s1.5 6 4 9M12 3c2.5 3 4 5.5 4 9s-1.5 6-4 9"/>
-                  <path d="M3.6 9h16.8M3.6 15h16.8"/>
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 3c-2.5 3-4 5.5-4 9s1.5 6 4 9M12 3c2.5 3 4 5.5 4 9s-1.5 6-4 9" />
+                  <path d="M3.6 9h16.8M3.6 15h16.8" />
                 </svg>
               </button>
               {langOpen && (
@@ -122,9 +121,8 @@ export default function Header() {
 
         {/* Mobile Menu */}
         <div
-          className={`lg:hidden transition-all duration-400 overflow-hidden ${
-            mobileOpen ? 'max-h-screen opacity-100 pb-4' : 'max-h-0 opacity-0'
-          }`}
+          className={`lg:hidden transition-all duration-400 overflow-hidden ${mobileOpen ? 'max-h-screen opacity-100 pb-4' : 'max-h-0 opacity-0'
+            }`}
         >
           <nav className="flex flex-col gap-1 bg-cream/98 rounded-2xl p-4 shadow-lg border border-sage/10">
             {navLinks.map(link => (

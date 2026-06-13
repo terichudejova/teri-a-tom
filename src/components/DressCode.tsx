@@ -59,9 +59,9 @@ export default function DressCode() {
           <div className="grid grid-cols-3 md:grid-cols-6 gap-3 md:gap-4 max-w-3xl mx-auto">
             {[
               { color: '#111111', name: 'Black', hex: '#111111', favourite: true },
+              { color: '#1d2c20ff', name: 'Forest', hex: '#1A231E', favourite: true },
               { color: '#1E2225', name: 'Onyx', hex: '#1E2225' },
               { color: '#28223A', name: 'Midnight', hex: '#28223A' },
-              { color: '#1A231E', name: 'Forest', hex: '#1A231E' },
               { color: '#3A2820', name: 'Espresso', hex: '#3A2820' },
               { color: '#2C2830', name: 'Plum', hex: '#2C2830' },
             ].map(({ color, name, favourite }) => (
