@@ -81,8 +81,11 @@ export default function Hero() {
             opacity="0.45"
           />
         </svg>
-        {/* Ombré fade into background */}
-        <div className="absolute bottom-0 left-0 w-full h-24 md:h-32 bg-gradient-to-t from-cream to-transparent" />
+        {/* Mobilní ombré: relativní výška 60% a měkký přechod, skryto na počítači */}
+        <div className="absolute bottom-0 left-0 w-full h-[60%] bg-gradient-to-t from-cream via-cream/50 to-transparent md:hidden pointer-events-none" />
+
+        {/* Počítačové ombré: původní pevná výška, skryto na mobilu */}
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-cream to-transparent hidden md:block pointer-events-none" />
       </div>
 
       {/* ── Teri & Tom — overlapping mountains ── */}
